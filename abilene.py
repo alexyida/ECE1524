@@ -84,21 +84,11 @@ class Abilene( Topo ):
         self.addLink( sHSTNng, sLOSAng )
 
         self.addLink( sIPLSng, sKSCYng )
+        
         self.addLink( sLOSAng, sSNVAng )
 
+        self.addLink( sNYCMng, sWASHng )
+
         self.addLink( sSNVAng, sSTTLng )
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        self.addLink( sWASHng, sNYCMng )
 
 topos = { 'abilene': ( lambda: Abilene() ) }
