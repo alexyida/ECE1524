@@ -16,70 +16,89 @@ class Abilene( Topo ):
         Topo.__init__( self )
 
         # Add hosts and switches
-        hSTTLng = self.addHost( 'h1' )
-        sSTTLng = self.addSwitch( 's1' )
+        hATLA_M5 = self.addHost( 'h1' )
+        sATLA_M5 = self.addSwitch( 's1' )
 
-        hSNVAng = self.addHost( 'h2' )
-        sSNVAng = self.addSwitch( 's2' )
+        hATLAng = self.addHost( 'h2' )
+        sATLAng = self.addSwitch( 's2' )
 
-        hDNVRng = self.addHost( 'h3' )
-        sDNVRng = self.addSwitch( 's3' )
+        hCHINng = self.addHost( 'h3' )
+        sCHINng = self.addSwitch( 's3' )
 
-        hLOSAng = self.addHost( 'h4' )
-        sLOSAng = self.addSwitch( 's4' )
+        hDNVRng = self.addHost( 'h4' )
+        sDNVRng = self.addSwitch( 's4' )
 
-        hKSCYng = self.addHost( 'h5' )
-        sKSCYng = self.addSwitch( 's5' )
+        hHSTNng = self.addHost( 'h5' )
+        sHSTNng = self.addSwitch( 's5' )
 
-        hHSTNng = self.addHost( 'h6' )
-        sHSTNng = self.addSwitch( 's6' )
+        hIPLSng = self.addHost( 'h6' )
+        sIPLSng = self.addSwitch( 's6' )
 
-        hATLAng = self.addHost( 'h7' )
-        sATLAng = self.addSwitch( 's7' )
+        hKSCYng = self.addHost( 'h7' )
+        sKSCYng = self.addSwitch( 's7' )
 
-        hATLA_M5 = self.addHost( 'h8' )
-        sATLA_M5 = self.addSwitch( 's8' )
+        hLOSAng = self.addHost( 'h8' )
+        sLOSAng = self.addSwitch( 's8' )
 
-        hIPLSng = self.addHost( 'h9' )
-        sIPLSng = self.addSwitch( 's9' )
+        hNYCMng = self.addHost( 'h9' )
+        sNYCMng = self.addSwitch( 's9' )
 
-        hCHINng = self.addHost( 'h10' )
-        sCHINng = self.addSwitch( 's10' )
+        hSNVAng = self.addHost( 'h10' )
+        sSNVAng = self.addSwitch( 's10' )
 
-        hNYCMng = self.addHost( 'h11' )
-        sNYCMng = self.addSwitch( 's11' )
+        hSTTLng = self.addHost( 'h11' )
+        sSTTLng = self.addSwitch( 's11' )
 
         hWASHng = self.addHost( 'h12' )
         sWASHng = self.addSwitch( 's12' )
 
         # Add links
-        self.addLink( hSTTLng, sSTTLng )
-        self.addLink( hSNVAng, sSNVAng )
-        self.addLink( hDNVRng, sDNVRng )
-        self.addLink( hLOSAng, sLOSAng )
-        self.addLink( hKSCYng, sKSCYng )
-        self.addLink( hHSTNng, sHSTNng )
-        self.addLink( hATLAng, sATLAng )
         self.addLink( hATLA_M5, sATLA_M5 )
-        self.addLink( hIPLSng, sIPLSng )
+        self.addLink( hATLAng, sATLAng )
         self.addLink( hCHINng, sCHINng )
+        self.addLink( hDNVRng, sDNVRng )
+        self.addLink( hHSTNng, sHSTNng )
+        self.addLink( hIPLSng, sIPLSng )
+        self.addLink( hKSCYng, sKSCYng )
+        self.addLink( hLOSAng, sLOSAng )
         self.addLink( hNYCMng, sNYCMng )
-        self.addLink( hWASHng, sWASHng )
+        self.addLink( hSNVAng, sSNVAng )
+        self.addLink( hSTTLng, sSTTLng )
+        self.addLink( hWASHng, sWASHng )        
 
-        self.addLink( sSTTLng, sSNVAng )
-        self.addLink( sSTTLng, sDNVRng )
-        self.addLink( sSNVAng, sDNVRng )
-        self.addLink( sSNVAng, sLOSAng )
-        self.addLink( sLOSAng, sHSTNng )
-        self.addLink( sKSCYng, sHSTNng )
-        self.addLink( sDNVRng, sKSCYng )
-        self.addLink( sKSCYng, sIPLSng )
-        self.addLink( sHSTNng, sATLAng )
+
+        self.addLink( sATLA_M5, sATLAng )
+
+        self.addLink( sATLAng, sHSTNng )
         self.addLink( sATLAng, sIPLSng )
-        self.addLink( sIPLSng, sCHINng )
-        self.addLink( sCHINng, sNYCMng )
-        self.addLink( sATLAng, sATLA_M5 )
         self.addLink( sATLAng, sWASHng )
+
+        self.addLink( sCHINng, sIPLSng )
+        self.addLink( sCHINng, sNYCMng )
+
+        self.addLink( sDNVRng, sKSCYng )
+        self.addLink( sDNVRng, sSNVAng )
+        self.addLink( sDNVRng, sSTTLng )
+
+        self.addLink( sHSTNng, sKSCYng )
+        self.addLink( sHSTNng, sLOSAng )
+
+        self.addLink( sIPLSng, sKSCYng )
+        self.addLink( sLOSAng, sSNVAng )
+
+        self.addLink( sSNVAng, sSTTLng )
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         self.addLink( sWASHng, sNYCMng )
 
 topos = { 'abilene': ( lambda: Abilene() ) }
